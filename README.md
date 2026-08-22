@@ -28,15 +28,11 @@ The app has a chat list where users can select a person and open a conversation.
 
 ### Chats Screen
 
-Shows the list of available conversations.
 
-![Chats Screen](screenshots/chats.png)
 
 ### Chat Screen
 
-A simple conversation screen where users can view and send messages.
 
-![Chat Screen](screenshots/chat-screen.png)
 
 ## Getting Started
 
