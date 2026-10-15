@@ -25,6 +25,10 @@
 - 👤 **Profile** – change or remove your profile photo, edit your name, log out
 - 🎨 **Polished UI** – rounded message bubbles, avatars and a consistent light-blue theme
 
+- ## 📥 Download
+
+Download the latest APK from the [Releases page](https://github.com/samadafrid1018/ChatApp/releases/latest).
+
 ## 📱 Screenshots
 
 <table>
