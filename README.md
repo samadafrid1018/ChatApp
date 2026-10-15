@@ -1,90 +1,141 @@
-# ChatApp
+<div align="center">
 
-A simple mobile chat application built with React Native, TypeScript, and Supabase.
+# 💬 ChatApp
 
-## About the App
+**A clean, modern real-world chat app built with React Native, TypeScript and Supabase.**
 
-I built this app to practice building a chat application with React Native and working with Supabase.
+![React Native](https://img.shields.io/badge/React%20Native-CLI-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
 
-The app has a chat list where users can select a person and open a conversation. Inside the chat screen, users can type and send messages.
+<img src="screenshots/overview.png" alt="ChatApp overview" width="100%"/>
 
-## Features
+</div>
 
-* Chat list
-* Individual chat screen
-* Send messages
-* Message input
-* Back navigation
-* Multiple conversations
-* Dark UI
+---
 
-## Tech Used
+## ✨ Features
 
-* React Native
-* TypeScript
-* Supabase
+- 🔐 **Authentication** – sign up and log in with email and password (with show/hide password)
+- 💬 **Chats list** – all conversations in one place with last message preview, time and search
+- 📨 **Messaging** – text messages, voice messages, file attachments and videos, with sent/read ticks
+- 👥 **Friends** – friends list with search and one-tap chat
+- ➕ **Add friends by code** – every user gets a personal 6-digit code to share or enter
+- 👤 **Profile** – change or remove your profile photo, edit your name, log out
+- 🎨 **Polished UI** – rounded message bubbles, avatars and a consistent light-blue theme
 
-## Screenshots
+## 📱 Screenshots
 
-### Chats Screen
+<table>
+  <tr>
+    <td align="center"><b>Login</b><br/><img src="screenshots/01-login.png" width="260"/></td>
+    <td align="center"><b>Chats</b><br/><img src="screenshots/02-chats.png" width="260"/></td>
+    <td align="center"><b>Conversation</b><br/><img src="screenshots/03-chat.png" width="260"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Friends</b><br/><img src="screenshots/04-friends.png" width="260"/></td>
+    <td align="center"><b>Add a friend</b><br/><img src="screenshots/05-add-friend.png" width="260"/></td>
+    <td align="center"><b>Profile</b><br/><img src="screenshots/06-profile.png" width="260"/></td>
+  </tr>
+</table>
 
-This screen shows the list of available chats. Users can select a chat to open the conversation.
+## 🛠️ Tech Stack
 
-![Chats Screen](chats.png.jpeg)
+| Area | Technology |
+| --- | --- |
+| Framework | React Native (CLI, not Expo) |
+| Language | TypeScript |
+| Navigation | React Navigation (native stack) |
+| Backend / Database | Supabase (Auth + Postgres) |
+| State | React Context (`AuthContext`) |
+| Platform | Android |
 
-### Chat Screen
+## 📂 Project Structure
 
-This screen shows an individual conversation where users can view messages and send new messages.
+```
+ChatApp/
+├── App.tsx              # Navigation setup
+├── AuthContext.tsx      # Auth state (login, signup, logout)
+├── AuthScreen.tsx       # Login / Sign up
+├── HomeScreen.tsx       # Chats list
+├── ChatScreen.tsx       # Conversation screen
+├── FriendsScreen.tsx    # Friends list
+├── AddFriendScreen.tsx  # Share / enter friend code
+├── ProfileScreen.tsx    # Edit profile
+├── Avatar.tsx           # Reusable avatar component
+├── supabase.ts          # Supabase client
+└── android/             # Android native project
+```
 
-![Chat Screen](chat-screen.png.jpeg)
+## 🚀 Getting Started
 
-## Getting Started
+### Prerequisites
 
-### Requirements
-
-* Node.js
-* Android Studio
-* Android SDK
-* React Native development environment
+- Node.js and npm
+- Android Studio with an emulator or a physical Android device
+- JDK and the Android SDK set up for React Native CLI
+- A free [Supabase](https://supabase.com) project
 
 ### Installation
 
-Clone the repository:
+1. Clone the repository
+   ```bash
+   git clone https://github.com/samadafrid1018/ChatApp.git
+   cd ChatApp
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Open `supabase.ts` and add your own Supabase **Project URL** and **publishable key**.
+4. Make sure Row Level Security (RLS) is enabled on your tables and the policies are set up (see [Database](#-database)).
+5. Start Metro
+   ```bash
+   npx react-native start
+   ```
+6. In a second terminal, run the app on Android
+   ```bash
+   npx react-native run-android
+   ```
+
+## 🗄️ Database
+
+The app uses Supabase Postgres with **Row Level Security** so users can only read their own conversations and friendships. The full table definitions and policies are in [`supabase/schema.sql`](supabase/schema.sql).
+
+## 📦 Build a Release APK
 
 ```bash
-git clone https://github.com/samadafrid1018/ChatApp.git
+cd android
+.\gradlew clean
+.\gradlew assembleRelease
 ```
 
-Go to the project folder:
+The APK is generated at:
 
-```bash
-cd ChatApp
+```
+android/app/build/outputs/apk/release/app-release.apk
 ```
 
-Install the packages:
+> 🔒 Never commit your keystore or its passwords. They are already excluded in `.gitignore`.
 
-```bash
-npm install
-```
+## 🗺️ Roadmap
 
-Start Metro:
+- [ ] Push notifications
+- [ ] Group chats
+- [ ] Dark mode
+- [ ] iOS support
 
-```bash
-npx react-native start
-```
+## 👨‍💻 Author
 
-Run the app on Android:
+**Abdul Samad** – React Native developer
 
-```bash
-npx react-native run-android
-```
+- GitHub: [@samadafrid1018](https://github.com/samadafrid1018)
 
-## Project
+---
 
-This project was built as a React Native practice project to improve my experience with mobile UI, navigation, TypeScript, and Supabase.
+<div align="center">
 
-## Developer
+If you like this project, please give it a ⭐
 
-Abdul Samad
-
-React Native Developer
+</div>
